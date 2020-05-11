@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Nendoroids!</title>
+    <!-- Coisas do Bootstrap -->
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Estilo -->
+    <link href="{{ url_for('static', filename='narrow-jumbotron.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <h3 class="text-muted">Nendoroids!</h3>
+      </div>
+      <div class="jumbotron">
+        <h1 class="display-3">Compre seu Nendoroid</h1>
+        <small>Compre o seu agora!</small>
+      </div>
+      <div class="d-flex justify-content-center">
+        <p>
+          <form action="{{ url_for('pagamento') }}" method="POST">
+            <div class="card m-3" style="width: 18rem;">
+              <img class="card-img-top" src="{{ url_for('static', filename='patchy.jpg') }}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Patchouli</h5>
+                <p class="card-text">Touhou Project - R$ 199,00</p>
+                  <script
+                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="{{ pub_key }}"
+                    data-amount="19900"
+                    data-currency = 'brl'
+                    data-name="Nendoroid Patchouli"
+                    data-description="Widget"
+                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                    data-locale="auto">
+                  </script>
+              </div>
+            </div>
+            <div class="card m-3" style="width: 18rem;">
+              <img class="card-img-top" src="{{ url_for('static', filename='dante.jpg') }}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Dante</h5>
+                <p class="card-text">Devil May Cry V - R$ 199,00</p>
+                  <script
+                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="{{ pub_key }}"
+                    data-amount="19900"
+                    data-currency = 'brl'
+                    data-name="Nendoroid Dante"
+                    data-description="Widget"
+                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                    data-locale="auto">
+                  </script>
+              </div>
+            </div>
+            <div class="card m-3" style="width: 18rem;">
+              <img class="card-img-top" src="{{ url_for('static', filename='sora.jpg') }}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Sora</h5>
+                <p class="card-text">Kingdom Hearts - R$ 199,00</p>
+                  <script
+                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="{{ pub_key }}"
+                    data-amount="19900"
+                    data-currency = 'brl'
+                    data-name="Nendoroid Sora"
+                    data-description="Widget"
+                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                    data-locale="auto">
+                  </script>
+              </div>
+            </div>
+          </form>
+        </p>
+      </div>
+      <footer class="footer">
+        <p>&copy; Otaku Fedido
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
